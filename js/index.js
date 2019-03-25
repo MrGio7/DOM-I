@@ -48,7 +48,19 @@ logo.alt = 'Great Idea! Company logo'
 // headerImg.setAttribute("src", "img/header-img.png");
 
 
-const multipleClasses = document.querySelectorAll('a');
+let parent = document.querySelector('nav');
+
+let newNavItemHome = document.createElement('a');
+newNavItemHome.textContent = 'Home';
+newNavItemHome.href = '#';
+newNavItemHome.style.color = 'green';
+
+let newNavItemMap = document.createElement('a');
+newNavItemMap.textContent = 'Map';
+newNavItemMap.href = '#';
+newNavItemMap.style.color = 'green';
+
+let multipleClasses = document.querySelectorAll('a');
 
 multipleClasses[0].innerHTML = 'Services';
 multipleClasses[1].innerHTML = 'Product';
@@ -56,6 +68,14 @@ multipleClasses[2].innerHTML = 'Vision';
 multipleClasses[3].innerHTML = 'Features';
 multipleClasses[4].innerHTML = 'About';
 multipleClasses[5].innerHTML = 'Contact';
+
+multipleClasses.forEach(function(currentValue){
+  currentValue.style.color = 'green';
+})
+
+parent.prepend(newNavItemHome);
+parent.appendChild(newNavItemMap);
+
 
 // //nav
 // let services = document.getElementsByTagName('a')[0];
